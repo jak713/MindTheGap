@@ -7,8 +7,8 @@ from dcmotor import DCMotor
 
 frequency = 1000 # Hz
 
-Pin1 = Pin(1, Pin.OUT)
-Pin2 = Pin(2, Pin.OUT)
+Pin1 = Pin(3, Pin.OUT)
+Pin2 = Pin(4, Pin.OUT)
 enable = PWM(Pin(2), freq=frequency)
 
 dc_motor = DCMotor(Pin1, Pin2, enable)
