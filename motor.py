@@ -3,7 +3,6 @@ Simple motor script.
 """
 from machine import Pin, PWM
 from time import sleep
-# from dcmotor import DCMotor
 
 PWM_FREQ = 1000
 MIN_POWER = 18000
@@ -55,9 +54,11 @@ class DCMotor:
         print("OPERATIONAL: Entering Bridge Mode")
         for s in range(0, BRIDGE_SPEED + 1, 2):
             dc_motor.forward(s)
+            dc_motor2.forward(s)
             sleep(0.05)
 
             dc_motor.brake()
+            dc_motor2.brake()
             print("SUCESS")
 
 frequency = 1000 # Hz
@@ -75,26 +76,6 @@ dc_motor2 = DCMotor(Pin3, Pin4, enable2
                     )
 
 def main():
-    try:
-    # print('Forward with speed: 50%')
-    # dc_motor.forward(50)
-    # dc_motor2.forward(50)
-    # sleep(5)
-    # dc_motor.stop()
-    # dc_motor2.stop()
-    # sleep(5)
-    # print('Backwards with speed: 100%')
-    # dc_motor.backwards(100)
-    # dc_motor2.backwards(100)
-    # sleep(5)
-    # print('Forward with speed: 5%')
-    # dc_motor.forward(5)
-    # dc_motor2.forward(5)
-    # sleep(5)
-    # dc_motor.stop()
-    # dc_motor2.stop()
-
-
         while True:
 
             cmd = input("Command (w=fwd, s=bwd, x=cross, space=stop): ").lower()
